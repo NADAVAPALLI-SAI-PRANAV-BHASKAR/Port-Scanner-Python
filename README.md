@@ -1,8 +1,8 @@
-# NetRecon - Python Network Reconnaissance Tool
+# NetRecon
 
-NetRecon is a Python-based network reconnaissance tool designed to perform hostname resolution, TCP port scanning, service identification, and automated report generation.
+NetRecon is a Python-based network reconnaissance tool that performs hostname resolution, TCP port scanning, service identification, and automated report generation.
 
-The project demonstrates core networking concepts, socket programming, DNS resolution, and basic security assessment techniques.
+The project demonstrates networking fundamentals, socket programming, DNS resolution, file handling, and basic security assessment techniques.
 
 ---
 
@@ -30,6 +30,14 @@ The project demonstrates core networking concepts, socket programming, DNS resol
 
 ---
 
+## Requirements
+
+- Python 3.10.0 or higher
+
+No external dependencies are required.
+
+---
+
 ## Project Structure
 
 ```text
@@ -37,6 +45,7 @@ NetRecon/
 │
 ├── scanner.py
 ├── README.md
+├── requirements.txt
 └── report_YYYYMMDD_HHMMSS.txt
 ```
 
@@ -132,7 +141,6 @@ Port 80 OPEN (HTTP)
 
 - Multithreaded scanning
 - Banner grabbing
-- JSON report export
 - Service fingerprinting
 - GUI interface
 - Network range scanning
@@ -142,3 +150,7 @@ Port 80 OPEN (HTTP)
 ## Disclaimer
 
 This project is intended for educational purposes and authorized security testing only. Scan only systems that you own or have explicit permission to test.
+
+---
+
+Thank you
