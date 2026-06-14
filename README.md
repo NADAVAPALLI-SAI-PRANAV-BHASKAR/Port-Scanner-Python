@@ -1,39 +1,35 @@
-# Port Scanner & Service Identifier
+# NetRecon
 
-A lightweight Python-based network scanning tool that checks common TCP ports on a target host and identifies running services.
+A Python-based network reconnaissance tool that performs TCP port scanning, hostname resolution, service identification, and scan report generation.
 
 ## Features
 
-- Scan common TCP ports
-- Detect common services
-- Uses TCP socket connections
-- Simple command-line interface
+- Hostname to IP resolution
+- Reverse DNS lookup
+- Custom port range scanning
+- Service detection
+- Scan timing metrics
+- Automatic report generation
 
-## Technologies Used
+## Technologies
 
 - Python
 - Socket Programming
-
-## Usage
-
-```bash
-python scanner.py
-```
-
-Enter an IP address when prompted.
+- Networking Fundamentals
 
 ## Example
 
-```
-Enter IP Address: 8.8.8.8
+Enter IP Address or Hostname: scanme.nmap.org
+Start Port: 20
+End Port: 100
+
+Resolved IP: 45.33.32.156
+Hostname: scanme.nmap.org
 
 Scanning...
 
-Port 53 OPEN (DNS)
+Port 22 OPEN (SSH)
+Port 80 OPEN (HTTP)
 
 Scan Complete
-```
-
-## Disclaimer
-
-This project is intended for educational purposes and should only be used on systems you own or have permission to test.
+Report saved as report.txt
