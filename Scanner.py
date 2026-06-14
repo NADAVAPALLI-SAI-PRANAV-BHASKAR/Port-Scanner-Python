@@ -80,7 +80,7 @@ print("Scan Complete")
 print(f"Scan completed in {scan_duration:.2f} seconds")
 
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-filename = f"report_{timestamp}.txt"
+filename = f"Report_{timestamp}.txt"
 
 with open(filename, "w") as file:
     file.write("NetRecon Scan Report\n")
