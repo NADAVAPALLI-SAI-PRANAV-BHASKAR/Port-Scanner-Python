@@ -98,3 +98,5 @@ with open(filename, "w") as file:
         file.write("No open ports found.\n")
 
 print(f"Report saved as {filename}")
+
+input("\nPress Enter to exit...")
