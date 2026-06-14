@@ -1,2 +1,2 @@
 # No external dependencies required
-# Uses only Python standard library modules
+# Python 3.10+ recommended(Used Python 3.14.6)
