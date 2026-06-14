@@ -1,5 +1,6 @@
 import socket
 import time
+import os
 from datetime import datetime
 
 print("=" * 50)
@@ -13,6 +14,7 @@ try:
     print(f"\nResolved IP: {ip_address}")
 except socket.gaierror:
     print("Invalid hostname or IP address")
+    input("\nPress Enter to exit...")
     exit()
 
 try:
@@ -27,10 +29,12 @@ try:
     end_port = int(input("End Port: "))
 except ValueError:
     print("Ports must be numbers")
+    input("\nPress Enter to exit...")
     exit()
 
 if start_port > end_port:
     print("Start port must be less than or equal to end port")
+    input("\nPress Enter to exit...")
     exit()
 
 ports = range(start_port, end_port + 1)
@@ -57,7 +61,7 @@ results = []
 
 for port in ports:
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.settimeout(.5)
+    sock.settimeout(0.5)
 
     result = sock.connect_ex((ip_address, port))
 
@@ -80,9 +84,14 @@ print("Scan Complete")
 print(f"Scan completed in {scan_duration:.2f} seconds")
 
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-filename = f"Report_{timestamp}.txt"
+filename = f"report_{timestamp}.txt"
 
-with open(filename, "w") as file:
+report_path = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    filename
+)
+
+with open(report_path, "w") as file:
     file.write("NetRecon Scan Report\n")
     file.write("=" * 40 + "\n")
     file.write(f"Target: {ip_address}\n")
@@ -97,6 +106,6 @@ with open(filename, "w") as file:
     else:
         file.write("No open ports found.\n")
 
-print(f"Report saved as {filename}")
+print(f"Report saved as:\n{report_path}")
 
 input("\nPress Enter to exit...")
