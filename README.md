@@ -1,4 +1,4 @@
-# NetRecon - Python Network Reconnaissance Tool
+# NetRecon - Network Reconnaissance Tool
 
 NetRecon is a Python-based network reconnaissance tool that performs hostname resolution, TCP port scanning, service identification, and automated report generation.
 
